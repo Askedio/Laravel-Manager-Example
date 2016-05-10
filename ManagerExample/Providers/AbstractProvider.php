@@ -15,17 +15,18 @@ abstract class AbstractProvider implements ProviderContract
     protected $request;
 
     /**
-     * Auth token
+     * Auth token.
+     *
      * @var string
      */
     protected $authToken;
 
-
     /**
      * Create a new provider instance.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  string  $authToken
+     * @param \Illuminate\Http\Request $request
+     * @param string                   $authToken
+     *
      * @return void
      */
     public function __construct(Request $request, $authToken)
