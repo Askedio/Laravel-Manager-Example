@@ -7,7 +7,8 @@ interface Factory
     /**
      * Get provider implementation.
      *
-     * @param  string  $driver
+     * @param string $driver
+     *
      * @return \App\Ads\Contracts\Provider
      */
     public function driver($driver = null);

@@ -14,13 +14,15 @@ class AdsManager extends Manager implements Contracts\Factory
     protected function createSupersonicDriver()
     {
         $config = $this->app['config']['services.supersonic'];
+
         return $this->buildProvider(\App\Ads\Providers\SupersonicProvider::class, $config);
     }
 
     /**
      * Get a driver instance.
      *
-     * @param  string  $driver
+     * @param string $driver
+     *
      * @return mixed
      */
     public function with($driver)
@@ -31,8 +33,9 @@ class AdsManager extends Manager implements Contracts\Factory
     /**
      * Build a provider instance.
      *
-     * @param  string  $provider
-     * @param  array  $config
+     * @param string $provider
+     * @param array  $config
+     *
      * @return \Laravel\Socialite\Two\AbstractProvider
      */
     public function buildProvider($provider, $config)
@@ -42,6 +45,7 @@ class AdsManager extends Manager implements Contracts\Factory
             $config['auth_token']
         );
     }
+
     /**
      * Get the default driver name.
      *
@@ -53,5 +57,4 @@ class AdsManager extends Manager implements Contracts\Factory
     {
         throw new InvalidArgumentException('No Ads driver was specified.');
     }
-
 }
